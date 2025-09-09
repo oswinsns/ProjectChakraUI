@@ -1,0 +1,1 @@
+console.log(feather.icons.camera.contents);
