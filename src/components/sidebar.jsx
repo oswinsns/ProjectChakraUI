@@ -1,6 +1,7 @@
 import { CalendarIcon, createIcon } from "@chakra-ui/icons"
 import { List, ListItem, Button, Divider, ListIcon} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
+import { FiCalendar, FiFileText, FiHome, FiLogOut, FiSettings, FiUser } from "react-icons/fi"
 
 const Sidebar = () => {
 
@@ -47,26 +48,28 @@ const Sidebar = () => {
 
         <ListItem>
             <NavLink to="/">
-            <ListIcon as ={CalendarIcon}></ListIcon>
+            <ListIcon as ={HomeIcon}></ListIcon>
                 Dashboard
             </NavLink>
         </ListItem>
 
         <ListItem>
             <NavLink to="/new-task">
-            <ListIcon as ={HomeIcon}></ListIcon>
+            <ListIcon as ={FiCalendar}></ListIcon>
                 Task
             </NavLink>
         </ListItem>
 
         <ListItem>
             <NavLink to="/account">
+            <ListIcon as ={FiUser}></ListIcon>
                 Dashboard
             </NavLink>
         </ListItem>
 
         <ListItem>
             <NavLink to="#">
+                 <ListIcon as ={FiFileText}></ListIcon>
                 Project
             </NavLink>
         </ListItem>
@@ -74,11 +77,14 @@ const Sidebar = () => {
 <Divider />
         <ListItem>
             <NavLink to="#">
+                <ListIcon as ={FiSettings}></ListIcon>
                 Settings
             </NavLink>
         </ListItem>
 
-        <Button w="full" colorScheme = "green" justifyContent={"flex-start"} fontWeight= "400">Logout</Button>
+        <Button w="full" colorScheme = "green" justifyContent={"flex-start"} fontWeight= "400">
+             <ListIcon as ={FiLogOut}></ListIcon>
+            Logout</Button>
     </List>
   )
 }
