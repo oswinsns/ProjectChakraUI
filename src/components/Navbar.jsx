@@ -1,8 +1,12 @@
 import { Flex, Heading, IconButton, Text, HStack} from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
 import { PhoneIcon, AddIcon, WarningIcon, SearchIcon } from "@chakra-ui/icons"
+import { FiMenu } from "react-icons/fi"
 
-const Navbar = ({onToggle}) => {
+const Navbar = (props) => {
+
+  const {onToggle} = props;
+
   return (
     // <Flex bg="gray.200" justifyContent={"space-between"} p="10px" flexWrap="wrap" gap="10px"> 
     //     <Box w="100px" h="100px" bg="bisque">1</Box>
@@ -11,10 +15,17 @@ const Navbar = ({onToggle}) => {
     //     <Box w="100px" h="100px">4</Box>
     // </Flex>
 
-    <Flex as="nav" bg="gray.200" justifyContent={"space-between"} p="10px" flexWrap="wrap" gap="10px" alignItems={"center"}>
+    <Flex as="nav" bg="gray.200" justify = {{base:"space-between", lg:"flex-end"}} p="10px" flexWrap="wrap" gap="10px" alignItems={"center"}>
 
-      <HStack>
-        <Heading as="h1" size="md" color="green.600">Dashboard</Heading>
+      <HStack display={{base:"flex", lg:"none"}}>
+        {/* <Heading as="h1" size="md" color="green.600">Dashboard</Heading> */}
+        {/* <IconButton display={{base:"inline-flex", lg:"none"}} aria-label="Open Menu" icon={<AddIcon />} onClick={onToggle} /> */}
+         <IconButton 
+         variant="ghost"
+         aria-label=""
+         icon={<FiMenu />}
+         onClick={onToggle}/> 
+         <Heading as ="h1" fontSize ="30px"> Dashboard</Heading>
       </HStack>
 
 
