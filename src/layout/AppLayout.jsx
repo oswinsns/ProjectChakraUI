@@ -20,9 +20,12 @@ export default function AppLayout() {
       bg="white" p="10px" borderRight="1px solid lightgray" 
       minH="100vh" position= {{base:"absolute", lg:"static"}} 
       zIndex="99"
-      left = {{base: isOpen ? "0" : "-100%", lg:"auto"}}> 
+      w = {{base:"250px", lg:"auto"}}
+      left = {{base: isOpen ? "0" : "-100%", lg:"auto"}}
+      transition = "left 0.3s ease-in-out"
+      > 
         {/* <Box>SideBar</Box> */}
-        <Sidebar> </Sidebar>
+        <Sidebar onClose= {onClose}/>
       </GridItem>
       <GridItem as="main" colSpan={{base:"6", lg:"4", xl:"5"}} p="10px" bg="white">
         <Navbar onToggle={onToggle}/>

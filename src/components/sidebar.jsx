@@ -1,9 +1,13 @@
 import { CalendarIcon, createIcon } from "@chakra-ui/icons"
-import { List, ListItem, Button, Divider, ListIcon} from "@chakra-ui/react"
+import { List, ListItem, Button, Divider, ListIcon, VStack} from "@chakra-ui/react"
 import { NavLink } from "react-router-dom"
-import { FiCalendar, FiFileText, FiHome, FiLogOut, FiSettings, FiUser } from "react-icons/fi"
+import { FiCalendar, FiFileText, FiHome, FiLogOut, FiSettings, FiUser, FiX } from "react-icons/fi"
+import { IconButton, Heading, HStack } from "@chakra-ui/react"
+import { FiMenu } from "react-icons/fi"
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+
+    const {onClose} = props;
 
     const HomeIcon = createIcon({
         displayName: "HomeIcon",
@@ -41,6 +45,22 @@ const Sidebar = () => {
         }
     }
   return (
+
+    <VStack w="full" alignItems={"flex-start"} p="10px" gap="20px"> 
+
+             <HStack justify="space-between" w="full">
+                {/* <Heading as="h1" size="md" color="green.600">Dashboard</Heading> */}
+                {/* <IconButton display={{base:"inline-flex", lg:"none"}} aria-label="Open Menu" icon={<AddIcon />} onClick={onToggle} /> */}
+                <Heading as ="h1" fontSize ="30px"> Dashboard</Heading>
+                 <IconButton 
+                 variant="ghost"
+                 aria-label=""
+                 icon={<FiX />}
+                 rounded ="full"
+                 display = {{base:"inline-flex", lg:"none"}}
+                 onClick={onClose}/> 
+              </HStack>
+
     <List sx={itemSrtyle} w="full" spacing={2}> 
         {/* <ListItem p="10px" borderBottom="1px solid lightgray">Dashboard</ListItem>
         <ListItem p="10px" borderBottom="1px solid lightgray">Profile</ListItem>
@@ -86,6 +106,8 @@ const Sidebar = () => {
              <ListIcon as ={FiLogOut}></ListIcon>
             Logout</Button>
     </List>
+
+    </VStack>
   )
 }
 
