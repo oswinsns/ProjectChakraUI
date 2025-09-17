@@ -102,7 +102,7 @@ const Sidebar = (props) => {
             </NavLink>
         </ListItem>
 
-        <Button w="full" colorScheme = "green" justifyContent={"flex-start"} fontWeight= "400">
+        <Button w="full" justifyContent={"flex-start"} fontWeight= "400" variant="ghost" colorScheme="green" bgColor={"gray.200"}>
              <ListIcon as ={FiLogOut}></ListIcon>
             Logout</Button>
     </List>
